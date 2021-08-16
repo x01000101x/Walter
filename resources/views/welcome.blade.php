@@ -683,7 +683,7 @@
             var settings = {
       "async": true,
     "crossDomain": true,
-  "url": "http://localhost:8000/api/users",
+  "url": "http://54.204.88.103/api/users",
   "method": "GET",
   "headers": {
     "cache-control": "no-cache",
