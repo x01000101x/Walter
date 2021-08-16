@@ -29,7 +29,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="javascript:void(0)" class="simple-text logo-mini">
-                        
+
                     </a>
                     <a href="javascript:void(0)" class="simple-text logo-normal">
                        WALTER
@@ -556,14 +556,14 @@
     <!--  Google Maps Plugin    -->
     <!-- Place this tag in your head or just before your close body tag. -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  
+
     <!-- Chart JS -->
     <script src="../assets/js/plugins/chartjs.min.js"></script>
     <!--  Notifications Plugin    -->
     <script src="../assets/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-    
+
     <script src="../assets/demo/demo.js"></script>
     <script>
         $(document).ready(function() {
@@ -678,8 +678,31 @@
     </script>
     <script>
         $(document).ready(function() {
+            var label = [];
+            var value = [];
+            var settings = {
+      "async": true,
+    "crossDomain": true,
+  "url": "http://localhost:8000/api/users",
+  "method": "GET",
+  "headers": {
+    "cache-control": "no-cache",
+    "postman-token": "fa17f3f6-2a1c-5c7c-0b52-da05265a13e6"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response.data);
+  for (let i = 0; i < response.data.length; i++) {
+      label[i] = response.data[i].label;
+      value[i] = response.data[i].value;
+
+  }
+ demo.initDashboardPageCharts(label,value);
+//   console.log(label, value);
+});
             // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
+
 
         });
     </script>
