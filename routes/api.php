@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Models\Data;
 
 
 /*
@@ -28,4 +29,10 @@ Route::get('users', function () {
         ],
         200
     );
+});
+Route::get('values/{val}', function ($val) {
+    Data::create([
+        "value" => $val
+    ]);
+    return response("Berhasil");
 });
