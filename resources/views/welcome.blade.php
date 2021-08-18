@@ -371,16 +371,12 @@
                                                 </th>
                                             </tr>
                                         </thead>
-@
+
                                         @foreach ($datas as $data)
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <?php
-                                                     $i = 1;
-                                                        echo $i;
-                                                        $i++;
-                                                    ?>
+                                                    {{$loop->iteration}} {{-- 1, 2, 3, ++ --}}
                                                 </td>
                                                 <td>
                                                     {{$data['value']}}
