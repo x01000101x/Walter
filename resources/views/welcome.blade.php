@@ -371,19 +371,22 @@
                                                 </th>
                                             </tr>
                                         </thead>
-                                        @foreach ($values as $value)
+@
+                                        @foreach ($datas as $data)
                                         <tbody>
                                             <tr>
                                                 <td>
                                                     <?php
-                                                        echo 1;
+                                                     $i = 1;
+                                                        echo $i;
+                                                        $i++;
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    {{$value['value']}}
+                                                    {{$data['value']}}
                                                 </td>
                                                 <td class="text-center">
-                                                    {{$value['created_at']}}
+                                                    {{$data['created_at']}}
                                                 </td>
                                             </tr>
                                         </tbody>

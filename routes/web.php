@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ValueController;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,4 @@ use App\Http\Controllers\ValueController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('welcome', [ValueController::class, 'show']);
+Route::get('/', [DataController::class, 'show']);
