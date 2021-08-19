@@ -14,7 +14,8 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', [DataController::class, 'show']);
+Route::get('/api/csuga1', [DataController::class, 'csuga1']);

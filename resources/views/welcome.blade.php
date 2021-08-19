@@ -174,53 +174,12 @@
                     </div>
                 </div>
                 <div class="row">
-
-
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-12 col-md-12">
                         <div class="card ">
                             <div class="card-header">
-                                <h4 class="card-title"> Percentage Table</h4>
+                                <h4 class="card-title">Percentage Table</h4>
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table tablesorter " id="">
-
-
-
-                                        <thead class=" text-primary">
-                                            <tr>
-                                                <th>
-                                                    NO
-                                                </th>
-                                                <th>
-                                                    Percentage
-                                                </th>
-                                                <th class="text-center">
-                                                    Time
-                                                </th>
-                                                <th class="text-center">
-                                                    Day
-                                                </th>
-                                            </tr>
-                                        </thead>
-
-                                        @foreach ($datas as $data)
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    {{$loop->iteration}} {{-- 1, 2, 3, ++ --}}
-                                                </td>
-                                                <td>
-                                                    {{$data['value']}}%
-                                                </td>
-                                                <td class="text-center">
-                                                    {{$data['created_at']}}
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        @endforeach
-                                    </table>
-                                </div>
+                            <div class="card-body" id='csuga1'>
                             </div>
                         </div>
                     </div>
@@ -429,6 +388,13 @@
 
 
         });
+
+        fetch("api/csuga1", {
+                method: 'GET',
+            }).then((response) => response.text())
+            .then((data) => {
+                document.getElementById('csuga1').innerHTML=data
+            });
 
         }, 10000);
 
