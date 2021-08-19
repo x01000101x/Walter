@@ -32,7 +32,7 @@
 
                     </a>
                     <a href="javascript:void(0)" class="simple-text logo-normal">
-                       WALTER
+                        WALTER
                     </a>
                 </div>
                 <ul class="nav">
@@ -69,10 +69,10 @@
                     <div class="collapse navbar-collapse" id="navigation">
                         <ul class="navbar-nav ml-auto">
 
-                                    <div class="photo">
-                                        <img src="../assets/img/anime3.png" alt="Profile Photo">
-                                    </div>
-                                    <b class="caret d-none d-lg-block d-xl-block"></b>
+                            <div class="photo">
+                                <img src="../assets/img/anime3.png" alt="Profile Photo">
+                            </div>
+                            <b class="caret d-none d-lg-block d-xl-block"></b>
 
 
 
@@ -147,15 +147,15 @@
                             <div class="card-body">
                                 <div class="chart-area">
                                     <div class="vertical-center">
-<a href="">
-    <div  class="pulse">
-    </div>
-</a>
+                                        <a href="">
+                                            <div class="pulse">
+                                            </div>
+                                        </a>
 
-                                        </div>
-                                            <canvas id="CountryChart">
-                                            </canvas>
-                                        </div>
+                                    </div>
+                                    <canvas id="CountryChart">
+                                    </canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -399,34 +399,39 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
+        setInterval(() => {
+            $(document).ready(function() {
             var created_at = [];
             var value = [];
             var settings = {
-      "async": true,
-    "crossDomain": true,
-  "url": "http://localhost:8000/api/users",
-  "method": "GET",
-  "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "fa17f3f6-2a1c-5c7c-0b52-da05265a13e6"
-  }
-}
+                "async": true,
+                "crossDomain": true,
+                "url": "http://localhost:8000/api/users",
+                "method": "GET",
+                "headers": {
+                    "cache-control": "no-cache",
+                    "postman-token": "fa17f3f6-2a1c-5c7c-0b52-da05265a13e6"
+                }
+            }
 
-$.ajax(settings).done(function (response) {
-  console.log(response.data);
-  for (let i = 0; i < response.data.length; i++) {
-      created_at[i] = response.data[i].created_at;
-      value[i] = response.data[i].value;
+            $.ajax(settings).done(function(response) {
 
-  }
- demo.initDashboardPageCharts(created_at,value);
-//   console.log(created_at, value);
-});
+                console.log(response.data);
+                for (let i = 0; i < response.data.length; i++) {
+                    created_at[i] = response.data[i].created_at;
+                    value[i] = response.data[i].value;
+
+                }
+                demo.initDashboardPageCharts(created_at, value);
+                //   console.log(created_at, value);
+            });
             // Javascript method's body can be found in assets/js/demos.js
 
 
         });
+
+        }, 10000);
+
     </script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
     <script>

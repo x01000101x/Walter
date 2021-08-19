@@ -21,11 +21,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('users', function () {
-    $users = DB::table('data')->get();
+    $users = DB::table('data')->orderBy('id', 'desc')->limit(10)
+        ->get()->reverse();
+    $pas = [];
+    $is = 0;
+    foreach ($users as $key => $value) {
+        $pas[$is]=$value;
+        $is++;
+    }
+    // dd($pas);
     return response(
         [
             'pesan' => 'berhasil',
-            'data' => $users,
+            'data' => $pas,
         ],
         200
     );
