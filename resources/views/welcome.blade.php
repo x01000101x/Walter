@@ -147,8 +147,10 @@
                             <div class="card-body">
                                 <div class="chart-area">
                                     <div class="vertical-center">
-
-                                            <button style="" class="button button5">Siram</button>
+<a href="">
+    <div  class="pulse">
+    </div>
+</a>
 
                                         </div>
                                             <canvas id="CountryChart">
