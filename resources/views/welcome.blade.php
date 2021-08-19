@@ -68,24 +68,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navigation">
                         <ul class="navbar-nav ml-auto">
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+
                                     <div class="photo">
                                         <img src="../assets/img/anime3.png" alt="Profile Photo">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
-                                    <p class="d-lg-none">
-                                        Log out
-                                    </p>
-                                </a>
-                                <ul class="dropdown-menu dropdown-navbar">
-                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
-                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
-                                    <li class="dropdown-divider"></li>
-                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
-                                </ul>
-                            </li>
-                            <li class="separator d-lg-none"></li>
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -151,8 +141,8 @@
                     <div class="col-lg-4">
                         <div class="card card-chart">
                             <div class="card-header">
-                                <h5 class="card-category">Daily Sales</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>
+                                <h5 class="card-category">Button</h5>
+                                <h3 class="card-title"><i class="tim-icons icon-tap-02 text-info"></i> PUPUK</h3>
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
@@ -345,7 +335,7 @@
                                                     NO
                                                 </th>
                                                 <th>
-                                                    Value
+                                                    Percentage
                                                 </th>
                                                 <th class="text-center">
                                                     Time
@@ -360,7 +350,7 @@
                                                     {{$loop->iteration}} {{-- 1, 2, 3, ++ --}}
                                                 </td>
                                                 <td>
-                                                    {{$data['value']}}
+                                                    {{$data['value']}}%
                                                 </td>
                                                 <td class="text-center">
                                                     {{$data['created_at']}}
@@ -412,19 +402,9 @@
                     <span class="badge dark-badge ml-2"></span>
                     <span class="color-label">DARK MODE</span>
                 </li>
-                <li class="button-container">
-                    <a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
-                    <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
-                        Documentation
-                    </a>
-                </li>
-                <li class="header-title">Thank you for 95 shares!</li>
+                <li class="header-title">Follow my GitHUb!</li>
                 <li class="button-container text-center">
-                    <button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
-                    <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
-                    <br>
-                    <br>
-                    <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/x01000101x" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Follow</a>
                 </li>
             </ul>
         </div>

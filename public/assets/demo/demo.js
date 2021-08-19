@@ -300,54 +300,54 @@ demo = {
       }
     };
 
+//Button pupuk
+    // gradientBarChartConfiguration = {
+    //   maintainAspectRatio: false,
+    //   legend: {
+    //     display: false
+    //   },
 
-    gradientBarChartConfiguration = {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      },
+    //   tooltips: {
+    //     backgroundColor: '#f5f5f5',
+    //     titleFontColor: '#333',
+    //     bodyFontColor: '#666',
+    //     bodySpacing: 4,
+    //     xPadding: 12,
+    //     mode: "nearest",
+    //     intersect: 0,
+    //     position: "nearest"
+    //   },
+    //   responsive: true,
+    //   scales: {
+    //     yAxes: [{
 
-      tooltips: {
-        backgroundColor: '#f5f5f5',
-        titleFontColor: '#333',
-        bodyFontColor: '#666',
-        bodySpacing: 4,
-        xPadding: 12,
-        mode: "nearest",
-        intersect: 0,
-        position: "nearest"
-      },
-      responsive: true,
-      scales: {
-        yAxes: [{
+    //       gridLines: {
+    //         drawBorder: false,
+    //         color: 'rgba(29,140,248,0.1)',
+    //         zeroLineColor: "transparent",
+    //       },
+    //       ticks: {
+    //         suggestedMin: 60,
+    //         suggestedMax: 120,
+    //         padding: 20,
+    //         fontColor: "#9e9e9e"
+    //       }
+    //     }],
 
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            suggestedMin: 60,
-            suggestedMax: 120,
-            padding: 20,
-            fontColor: "#9e9e9e"
-          }
-        }],
+    //     xAxes: [{
 
-        xAxes: [{
-
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            padding: 20,
-            fontColor: "#9e9e9e"
-          }
-        }]
-      }
-    };
+    //       gridLines: {
+    //         drawBorder: false,
+    //         color: 'rgba(29,140,248,0.1)',
+    //         zeroLineColor: "transparent",
+    //       },
+    //       ticks: {
+    //         padding: 20,
+    //         fontColor: "#9e9e9e"
+    //       }
+    //     }]
+    //   }
+    // };
 
     var ctx = document.getElementById("chartLinePurple").getContext("2d");
 
@@ -393,10 +393,12 @@ demo = {
     gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); //green colors
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
+    //bulanan
+
     var data = {
       labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
       datasets: [{
-        label: "My First dataset",
+        label: "Percentage",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -439,7 +441,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "Percentage",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
@@ -490,7 +492,7 @@ demo = {
     gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
-
+//button pupuk
     var myChart = new Chart(ctx, {
       type: 'bar',
       responsive: true,
@@ -498,7 +500,7 @@ demo = {
         display: false
       },
       data: {
-        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+
         datasets: [{
           label: "Countries",
           fill: true,
@@ -508,7 +510,7 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+
         }]
       },
       options: gradientBarChartConfiguration
