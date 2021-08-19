@@ -111,7 +111,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 text-left">
                                         <h5 class="card-category">Real-time</h5>
-                                        <h2 class="card-title">Soil Moisture Graphic</h2>
+                                        <h2 class="card-title">Soil Moisture Graphics</h2>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
@@ -559,7 +559,7 @@
     </script>
     <script>
         $(document).ready(function() {
-            var label = [];
+            var created_at = [];
             var value = [];
             var settings = {
       "async": true,
@@ -575,12 +575,12 @@
 $.ajax(settings).done(function (response) {
   console.log(response.data);
   for (let i = 0; i < response.data.length; i++) {
-      label[i] = response.data[i].label;
+      created_at[i] = response.data[i].created_at;
       value[i] = response.data[i].value;
 
   }
- demo.initDashboardPageCharts(label,value);
-//   console.log(label, value);
+ demo.initDashboardPageCharts(created_at,value);
+//   console.log(created_at, value);
 });
             // Javascript method's body can be found in assets/js/demos.js
 

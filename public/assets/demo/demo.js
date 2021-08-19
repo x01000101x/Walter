@@ -106,7 +106,7 @@ demo = {
     });
   },
 
-  initDashboardPageCharts: function(label, value) {
+  initDashboardPageCharts: function(created_at, value) {
 
     gradientChartOptionsConfigurationWithTooltipBlue = {
       maintainAspectRatio: false,
@@ -423,7 +423,7 @@ demo = {
 
 
 
-    var chart_labels = label;
+    var chart_labels = created_at;
     var chart_data = value;
 
 
@@ -462,14 +462,14 @@ demo = {
     $("#0").click(function() {
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
-      data.labels = chart_labels;
+      data.created_at = chart_labels;
       myChartData.update();
     });
     $("#1").click(function() {
       var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
-      data.labels = chart_labels;
+      data.created_at = chart_labels;
       myChartData.update();
     });
 
@@ -477,7 +477,7 @@ demo = {
       var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
-      data.labels = chart_labels;
+      data.created_at = chart_labels;
       myChartData.update();
     });
 
