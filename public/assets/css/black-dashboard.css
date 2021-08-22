@@ -19837,7 +19837,7 @@ Copyright (c) 2015 Daniel Eden
 
 .white-content .card:not(.card-white) {
     background: #ffffff;
-    box-shadow: 0 1px 15px 0 rgba(, , , 0.05);
+    box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.05);
 }
 
 .white-content .card:not(.card-white) .card-header {
