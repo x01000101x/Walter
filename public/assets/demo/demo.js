@@ -106,7 +106,7 @@ demo = {
     });
   },
 
-  initDashboardPageCharts: function(created_at, value) {
+  initDashboardPageCharts: function(created_at, value, mas22,mas23) {
 
     gradientChartOptionsConfigurationWithTooltipBlue = {
       maintainAspectRatio: false,
@@ -309,7 +309,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: mas23,
       datasets: [{
         label: "Data",
         fill: true,
@@ -325,12 +325,12 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: mas22,
       }]
     };
 
     var myChart = new Chart(ctx, {
-      type: 'line',
+      type: 'bar',
       data: data,
       options: gradientChartOptionsConfigurationWithTooltipPurple
     });

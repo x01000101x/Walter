@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Data;
 use App\Models\setbinharian;
+use App\Http\Controllers\DataController;
+use App\Models\setbinbulan;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,20 +47,50 @@ Route::get('values/{val}', function ($val) {
     date_default_timezone_set('Asia/Jakarta');
     $date = date('Y-m-d');
     $day = DB::table('setbinharians')
-        ->where('created_at', 'like', '%'.$date.'%')
+        ->where('created_at', 'like', '%' . $date . '%')
         ->first();
     if (!empty($day)) {
         DB::table('setbinharians')
             ->where('created_at', $day->created_at)
-            ->update(['value' => (($day->value+$val)/2)]);
+            ->update(['value' => (($day->value + $val) / 2)]);
     } else {
         setbinharian::create([
             "value" => $val
         ]);
     }
     $day = DB::table('setbinharians')
-        ->where('created_at', 'like','%'. $date.'%')
+        ->where('created_at', 'like', '%' . $date . '%')
         ->first();
-    // dd($day);
+
+    $date = date('Y-m');
+    $bulan = DB::table('setbinbulans')
+        ->where('created_at', 'like', '%' . $date . '%')
+        ->first();
+    if (!empty($bulan)) {
+        DB::table('setbinbulans')
+            ->where('created_at', $bulan->created_at)
+            ->update(['value' => (($bulan->value + $val) / 2)]);
+    } else {
+        setbinbulan::create([
+            "value" => $val
+        ]);
+    }
+    $bulan = DB::table('setbinbulans')
+        ->where('created_at', 'like', '%' . $date . '%')
+        ->first();
+    // dd($bulan);
     return response("Berhasil");
 });
+
+
+
+Route::get('/buttuon', [DataController::class, 'button'])->name('button');
+
+// Route::get('month', function () {
+//     $data = setbinbulan::orderBy('id', 'desc')->limit(4)->get()->reverse();
+//     $bulan = [];
+//     foreach ($data as $key => $value) {
+//         $x = explode(' ', $value->created_at);
+//         echo ;
+//     }
+// });

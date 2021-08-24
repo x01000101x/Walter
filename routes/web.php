@@ -19,3 +19,5 @@ use App\Http\Controllers\DataController;
 // });
 Route::get('/', [DataController::class, 'show']);
 Route::get('/api/csuga1', [DataController::class, 'csuga1']);
+Route::get('/button', [DataController::class, 'button']);
+Route::get('/bulan', [DataController::class, 'bulan']);

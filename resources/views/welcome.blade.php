@@ -61,7 +61,8 @@
                         </div>
                         <a class="navbar-brand" href="javascript:void(0)">WALTER ADMIN</a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar navbar-kebab"></span>
                         <span class="navbar-toggler-bar navbar-kebab"></span>
                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -80,7 +81,8 @@
                     </div>
                 </div>
             </nav>
-            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
+                aria-labelledby="searchModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -107,7 +109,8 @@
                                         <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
                                             <label class="btn btn-sm btn-primary btn-simple active" id="0">
                                                 <input type="radio" name="options" checked>
-                                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Linear graphic</span>
+                                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Linear
+                                                    graphic</span>
                                                 <span class="d-block d-sm-none">
                                                     <i class="tim-icons icon-single-02"></i>
                                                 </span>
@@ -147,57 +150,67 @@
                             <div class="card-body">
                                 <div class="chart-area">
                                     <div class="vertical-center">
-                                        <a href="">
-                                            <div class="pulse">
-                                            </div>
-                                        </a>
+                                        <a href="{{ route('button') }}">
+
+                                            @if (App\Models\Action::where('name', 'pupuk')->pluck('status')->first() == 'OFF')
+
+
+                                                <div class="pulse">
+
+                                                @else
+
+                                                    <div class="pulse2">
+                                            @endif
 
                                     </div>
-                                    <canvas id="CountryChart">
-                                    </canvas>
+                                    </a>
+
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-chart">
-                            <div class="card-header">
-                                <h5 class="card-category">Completed Tasks</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="chart-area">
-                                    <canvas id="chartLineGreen"></canvas>
-                                </div>
+                                <canvas id="CountryChart">
+                                </canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card ">
-                            <div class="card-header">
-                                <h4 class="card-title">Percentage Table</h4>
-                            </div>
-                            <div class="card-body" id='csuga1'>
+                <div class="col-lg-4">
+                    <div class="card card-chart">
+                        <div class="card-header">
+                            <h5 class="card-category">Completed Tasks</h5>
+                            <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="chartLineGreen"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-
-                    <div class="copyright">
-                        ©
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script> made by
-                        <a href="javascript:void(0)" target="_blank">Leonard</a>.
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title">Percentage Table</h4>
+                        </div>
+                        <div class="card-body" id='csuga1'>
+                        </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
+        <footer class="footer">
+            <div class="container-fluid">
+
+                <div class="copyright">
+                    ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> made by
+                    <a href="javascript:void(0)" target="_blank">Leonard</a>.
+                </div>
+            </div>
+        </footer>
+    </div>
     </div>
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
@@ -224,7 +237,9 @@
                 </li>
                 <li class="header-title">Follow my GitHUb!</li>
                 <li class="button-container text-center">
-                    <a class="github-button" href="https://github.com/x01000101x" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Follow</a>
+                    <a class="github-button" href="https://github.com/x01000101x" data-icon="octicon-star"
+                        data-size="large" data-show-count="true"
+                        aria-label="Star ntkme/github-buttons on GitHub">Follow</a>
                 </li>
             </ul>
         </div>
@@ -243,9 +258,26 @@
     <!--  Notifications Plugin    -->
     <script src="../assets/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
+    <!-- Black Dashboard DEMO methods, don't include it in your project! -->
 
     <script src="../assets/demo/demo.js"></script>
+    <script>
+        function send_status() {
+
+            fetch("api/button", {
+                    method: 'GET',
+                }).then((response) => response.text())
+                .then((data) => {
+                    console.log('beres');
+                });
+
+
+
+        }
+    </script>
+
+
     <script>
         $(document).ready(function() {
             $().ready(function() {
@@ -358,46 +390,67 @@
         });
     </script>
     <script>
-        setInterval(() => {
+        function one() {
             $(document).ready(function() {
-            var created_at = [];
-            var value = [];
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "api/users",
-                "method": "GET",
-                "headers": {
-                    "cache-control": "no-cache",
-                    "postman-token": "fa17f3f6-2a1c-5c7c-0b52-da05265a13e6"
+                var created_at = [];
+                var value = [];
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "api/users",
+                    "method": "GET",
+                    "headers": {
+                        "cache-control": "no-cache",
+                        "postman-token": "fa17f3f6-2a1c-5c7c-0b52-da05265a13e6"
+                    }
                 }
-            }
 
-            $.ajax(settings).done(function(response) {
+                $.ajax(settings).done(function(response) {
 
-                console.log(response.data);
-                for (let i = 0; i < response.data.length; i++) {
-                    created_at[i] = response.data[i].created_at;
-                    value[i] = response.data[i].value;
+                    console.log(response.data);
+                    for (let i = 0; i < response.data.length; i++) {
+                        created_at[i] = response.data[i].created_at;
+                        value[i] = response.data[i].value;
 
-                }
-                demo.initDashboardPageCharts(created_at, value);
-                //   console.log(created_at, value);
+
+
+                    }
+
+                    fetch("/bulan", {
+                            method: 'GET',
+                        }).then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+
+
+
+                            demo.initDashboardPageCharts(created_at, value, data['value'], data[
+                                'label']);
+                        });
+
+
+                    //   console.log(created_at, value);
+                });
+                // Javascript method's body can be found in assets/js/demos.js
+
+
             });
-            // Javascript method's body can be found in assets/js/demos.js
 
+            fetch("api/csuga1", {
+                    method: 'GET',
+                }).then((response) => response.text())
+                .then((data) => {
+                    document.getElementById('csuga1').innerHTML = data
+                });
 
-        });
+        }
+        one();
 
-        fetch("api/csuga1", {
-                method: 'GET',
-            }).then((response) => response.text())
-            .then((data) => {
-                document.getElementById('csuga1').innerHTML=data
-            });
+        setInterval(() => {
+            one();
+
 
         }, 10000);
-
     </script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
     <script>
