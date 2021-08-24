@@ -8,6 +8,7 @@ use App\Models\setbinharian;
 use App\Models\Action;
 use App\Models\setbinbulan;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DataController extends Controller
 {
@@ -63,7 +64,11 @@ class DataController extends Controller
 
         return redirect()->back()->with(['status' => 'success']);
     }
-
+    public function pupuk()
+    {
+        $das=DB::table('actions')->where('name','pupuk')->first()->status;
+        return \response(([$das]));
+    }
 
     public function bulan()
     {
