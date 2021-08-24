@@ -21,3 +21,4 @@ Route::get('/', [DataController::class, 'show']);
 Route::get('/api/csuga1', [DataController::class, 'csuga1']);
 Route::get('/button', [DataController::class, 'button']);
 Route::get('/bulan', [DataController::class, 'bulan']);
+Route::get('/pupuk', [DataController::class, 'pupuk']);

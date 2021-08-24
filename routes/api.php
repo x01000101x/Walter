@@ -84,7 +84,7 @@ Route::get('values/{val}', function ($val) {
 
 
 
-Route::get('/buttuon', [DataController::class, 'button'])->name('button');
+Route::get('/button', [DataController::class, 'button'])->name('button');
 
 // Route::get('month', function () {
 //     $data = setbinbulan::orderBy('id', 'desc')->limit(4)->get()->reverse();
