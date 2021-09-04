@@ -132,7 +132,8 @@
                         <div class="card card-chart">
                             <div class="card-header">
                                 <h5 class="card-category">Real-time</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>
+                                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>Data
+                                    rata-rata kelembaban perbulan
                                 </h3>
                             </div>
                             <div class="card-body">
