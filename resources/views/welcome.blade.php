@@ -20,7 +20,7 @@
     <link href="{{ url('/') }}/assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="___class_+?0___">
     <div class="wrapper">
         <div class="sidebar">
             <!--
@@ -131,8 +131,9 @@
                     <div class="col-lg-4">
                         <div class="card card-chart">
                             <div class="card-header">
-                                <h5 class="card-category">Total Shipments</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 763,215</h3>
+                                <h5 class="card-category">Real-time</h5>
+                                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>
+                                </h3>
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
