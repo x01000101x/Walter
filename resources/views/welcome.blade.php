@@ -61,8 +61,7 @@
                         </div>
                         <a class="navbar-brand" href="javascript:void(0)">WALTER ADMIN</a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar navbar-kebab"></span>
                         <span class="navbar-toggler-bar navbar-kebab"></span>
                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -81,8 +80,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
-                aria-labelledby="searchModal" aria-hidden="true">
+            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -157,62 +155,62 @@
                                             @if (App\Models\Action::where('name', 'pupuk')->pluck('status')->first() == 'OFF')
 
 
-                                                <div class="pulse">
+                                            <div class="pulse">
 
                                                 @else
 
-                                                    <div class="pulse2">
-                                            @endif
+                                                <div class="pulse2">
+                                                    @endif
+
+                                                </div>
+                                        </a>
 
                                     </div>
-                                    </a>
-
+                                    <canvas id="CountryChart">
+                                    </canvas>
                                 </div>
-                                <canvas id="CountryChart">
-                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header">
+                                <h5 class="card-category">Completed Tasks</h5>
+                                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="chartLineGreen"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card card-chart">
-                        <div class="card-header">
-                            <h5 class="card-category">Completed Tasks</h5>
-                            <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-area">
-                                <canvas id="chartLineGreen"></canvas>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4 class="card-title">Percentage Table</h4>
+                            </div>
+                            <div class="card-body" id='csuga1'>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="card ">
-                        <div class="card-header">
-                            <h4 class="card-title">Percentage Table</h4>
-                        </div>
-                        <div class="card-body" id='csuga1'>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="footer">
-            <div class="container-fluid">
+            <footer class="footer">
+                <div class="container-fluid">
 
-                <div class="copyright">
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> made by
-                    <a href="javascript:void(0)" target="_blank">Leonard</a>.
+                    <div class="copyright">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> made by
+                        <a href="javascript:void(0)" target="_blank">Leonard</a>.
+                    </div>
                 </div>
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
     </div>
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
@@ -239,9 +237,7 @@
                 </li>
                 <li class="header-title">Follow my GitHUb!</li>
                 <li class="button-container text-center">
-                    <a class="github-button" href="https://github.com/x01000101x" data-icon="octicon-star"
-                        data-size="large" data-show-count="true"
-                        aria-label="Star ntkme/github-buttons on GitHub">Follow</a>
+                    <a class="github-button" href="https://github.com/x01000101x" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Follow</a>
                 </li>
             </ul>
         </div>
@@ -408,34 +404,30 @@
                 }
 
                 $.ajax(settings).done(function(response) {
-
                     console.log(response.data);
                     for (let i = 0; i < response.data.length; i++) {
                         created_at[i] = response.data[i].created_at;
                         value[i] = response.data[i].value;
-
-
-
                     }
-
                     fetch("/bulan", {
                             method: 'GET',
                         }).then((response) => response.json())
                         .then((data) => {
-                            console.log(data);
-
-
-
-                            demo.initDashboardPageCharts(created_at, value, data['value'], data[
-                                'label']);
+                            fetch("/tombol2", {
+                                    method: 'GET',
+                                }).then((response2) => response.json())
+                                .then((data2) => {
+                                    console.log(data2);
+                                    demo.initDashboardPageCharts(
+                                        created_at, 
+                                        value,
+                                        data['value'],
+                                        data['label'], 
+                                        data2['value'], 
+                                        data2['label']);
+                                });
                         });
-
-
-                    //   console.log(created_at, value);
                 });
-                // Javascript method's body can be found in assets/js/demos.js
-
-
             });
 
             fetch("api/csuga1", {

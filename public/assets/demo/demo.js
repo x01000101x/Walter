@@ -106,7 +106,7 @@ demo = {
     });
   },
 
-  initDashboardPageCharts: function(created_at, value, mas22,mas23) {
+  initDashboardPageCharts: function(created_at, value, mas22,mas23,mas33,mas34) {
 
     gradientChartOptionsConfigurationWithTooltipBlue = {
       maintainAspectRatio: false,
@@ -347,9 +347,9 @@ demo = {
     //bulanan
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: mas33,
       datasets: [{
-        label: "Percentage",
+        label: "polarArea",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -363,7 +363,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: mas34,
       }]
     };
 

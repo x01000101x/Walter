@@ -7,6 +7,7 @@ use App\Models\Data;
 use App\Models\setbinharian;
 use App\Http\Controllers\DataController;
 use App\Models\setbinbulan;
+use App\Models\tobol;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,24 @@ Route::get('users', function () {
         200
     );
 });
+// endpoin tobol
+Route::get('/tombol',function($val=1){
+    date_default_timezone_set('Asia/Jakarta');
+    $date = date('Y-m-d');
+    $day = DB::table('tobols')
+        ->where('created_at', 'like', '%' . $date . '%')
+        ->first();
+        if (!empty($day)) {
+            DB::table('tobols')
+                ->where('created_at', $day->created_at)
+                ->update(['value' => (($day->value + $val) / 2)]);
+        } else {
+            tobol::create([
+                "value" => $val
+            ]);
+        }
+});
+// enpoin iot
 Route::get('values/{val}', function ($val) {
     Data::create([
         "value" => $val
@@ -81,9 +100,6 @@ Route::get('values/{val}', function ($val) {
     // dd($bulan);
     return response("Berhasil");
 });
-
-
-
 Route::get('/button', [DataController::class, 'button'])->name('button');
 
 // Route::get('month', function () {
