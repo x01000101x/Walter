@@ -408,7 +408,6 @@
                 }
 
                 $.ajax(settings).done(function(response) {
-                    console.log(response.data);
                     for (let i = 0; i < response.data.length; i++) {
                         created_at[i] = response.data[i].created_at;
                         value[i] = response.data[i].value;
@@ -419,9 +418,11 @@
                         .then((data) => {
                             fetch("/tombol2", {
                                     method: 'GET',
-                                }).then((response2) => response.json())
+                                }).then((response2) => response2.json())
                                 .then((data2) => {
-                                    console.log(data2);
+                                    console.log(
+                                        data2['value'],
+                                        data2['label']);
                                     demo.initDashboardPageCharts(
                                         created_at,
                                         value,

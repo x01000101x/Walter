@@ -347,9 +347,9 @@ demo = {
     //bulanan
 
     var data = {
-      labels: mas33,
+      labels: mas34,
       datasets: [{
-        label: "polarArea",
+        label: "Tertekan",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -363,7 +363,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: mas34,
+        data: mas33,
       }]
     };
 

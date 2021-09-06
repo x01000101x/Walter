@@ -38,15 +38,15 @@ class DataController extends Controller
         $day = DB::table('tobols')
             ->where('created_at', 'like', '%' . $date . '%')
             ->first();
-            if (!empty($day)) {
-                DB::table('tobols')
-                    ->where('created_at', $day->created_at)
-                    ->update(['value' => ($day->value + 1)]);
-            } else {
-                tobol::create([
-                    "value" => 1,
-                ]);
-            }
+        if (!empty($day)) {
+            DB::table('tobols')
+                ->where('created_at', $day->created_at)
+                ->update(['value' => ($day->value + 1)]);
+        } else {
+            tobol::create([
+                "value" => 1,
+            ]);
+        }
 
         // dd(Action::where('name', 'pupuk')->first()->status);
         if (Action::where('name', 'pupuk')->first()->status == "OFF") {
@@ -81,7 +81,7 @@ class DataController extends Controller
     }
     public function pupuk()
     {
-        $das=DB::table('actions')->where('name','pupuk')->first()->status;
+        $das = DB::table('actions')->where('name', 'pupuk')->first()->status;
         return \response(([$das]));
     }
 
@@ -106,9 +106,11 @@ class DataController extends Controller
         foreach ($data as $key => $value) {
             $x = explode(' ', $value->created_at);
             $x = explode('-', $x[0]);
-            $hari[] = $x[1];
+            $hari[] = $x[2];
             $val[] = $value->value;
         }
+        // var_dump($hari);
+        // die;
         return response(['label' => $hari, 'value' => $val], 200);
     }
 }
