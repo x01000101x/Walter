@@ -416,7 +416,7 @@
                             method: 'GET',
                         }).then((response) => response.json())
                         .then((data) => {
-                            fetch("/tombol2", {
+                            fetch("tombol2", {
                                     method: 'GET',
                                 }).then((response2) => response2.json())
                                 .then((data2) => {
