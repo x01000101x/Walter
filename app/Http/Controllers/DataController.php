@@ -62,7 +62,7 @@ class DataController extends Controller
         }
 
 
-        sleep(5);
+        sleep(7);
 
         if (Action::where('name', 'pupuk')->first()->status == "OFF") {
             Action::where('name', 'pupuk')->update([
@@ -82,7 +82,7 @@ class DataController extends Controller
     public function pupuk()
     {
         $das = DB::table('actions')->where('name', 'pupuk')->first()->status;
-        return \response(([$das]));
+        return \response(["data"=>$das],200);
     }
 
     public function bulan()
