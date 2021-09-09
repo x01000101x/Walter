@@ -178,7 +178,7 @@
                     <div class="card card-chart">
                         <div class="card-header">
                             <h5 class="card-category">Real-time</h5>
-                            <h3 class="card-title"><i class="tim-icons icon-send text-success"></i>PUPUK graphic
+                            <h3 class="card-title"><i class="tim-icons icon-send text-success"></i>PUPUK graphics
                             </h3>
                         </div>
                         <div class="card-body">
