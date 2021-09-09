@@ -63,8 +63,8 @@
 .pulse {
     height: 200px;
     width: 200px;
-    background: linear-gradient(cyan,
-            cyan);
+    background: linear-gradient(purple,
+            purple);
     border-radius: 50%;
 }
 
@@ -73,8 +73,8 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: linear-gradient(cyan,
-            cyan);
+    background: linear-gradient(purple,
+            purple);
     border-radius: 50%;
     z-index: -1;
     opacity: 0.7;
